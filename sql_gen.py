@@ -20,8 +20,8 @@ while (hash1 != hash2):
 
 # Making sql file
 md5pass = '\'md5'+hash1+'\''
-file = open('psql_script.sql', 'w')
-for line in fileinput.input('psql_script_TEMPLATE.sql', inplace=False):
+file = open('/vagrant/psql_script.sql', 'w')
+for line in fileinput.input('/vagrant/psql_script_TEMPLATE.sql', inplace=False):
 	newline = line.replace('USERNAME', username).replace('MD5PASSWORD', md5pass)
 	file.write(newline)
 file.close()
